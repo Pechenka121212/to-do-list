@@ -4,9 +4,10 @@ namespace core
 {
 	class Task
 	{
+		
 	private:
 
-		int* _priority;
+		unsigned int* _priority;
 
 		char* _text;
 
@@ -14,22 +15,14 @@ namespace core
 
 	public:
 
-		Task(int* priority, char* text, bool* isDone)
-		{
-			_priority = priority;
+		Task(unsigned int* priority, char* text, bool* isDone);
 
-			_text = text;
-
-			_isDone = isDone;
-		}
-
-		~Task()
-		{
-			delete _priority;
-
-			delete[] _text;
-
-			delete _isDone;
-		}
+		~Task();
+		
+		unsigned int* getPriority();
+		
+		char* getText();
+		
+		bool* getIsDone();
 	};
 }
