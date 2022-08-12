@@ -1,5 +1,14 @@
 #include "core.h"
 
+core::Task::Task()
+{
+	_priority = new unsigned int;
+
+	_text = new char[2];
+
+	_isDone = new bool;
+}
+
 core::Task::Task(unsigned int* priority, char* text, bool* isDone)
 {
 	_priority = priority;
@@ -18,17 +27,17 @@ core::Task::~Task()
 	delete _isDone;
 }
 
-unsigned int* core::Task::getPriority()
+unsigned int* core::Task::GetPriority()
 {
 	return _priority;
 }
 
-char* core::Task::getText()
+char* core::Task::GetText()
 {
 	return _text;
 }
 
-bool* core::Task::getIsDone()
+bool* core::Task::GetIsDone()
 {
 	return _isDone;
 }
