@@ -17,11 +17,11 @@ namespace core
 		Task(unsigned int* priority, char* text, bool* isDone);
 
 		~Task();
-		
+
 		unsigned int* GetPriority();
-		
+
 		char* GetText();
-		
+
 		bool* GetIsDone();
 	};
 
@@ -58,6 +58,7 @@ namespace interface
 	};
 }
 
+
 namespace controller
 {
 	class TaskController
@@ -67,5 +68,17 @@ namespace controller
 
 	public:
 		void EditTask(core::Task* editableTask, unsigned int* newPriority, char* newText, bool* newIsDone);
+	};
+}
+
+namespace interface
+{
+	class IUserInterface
+	{
+	private:
+		controller::TaskController* _taskController;
+
+	public:
+		virtual void PrintTask() = 0;
 	};
 }
