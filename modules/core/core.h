@@ -25,10 +25,21 @@ namespace core
 		bool* GetIsDone();
 	};
 
+	class Helper
+	{
+	public:
+		unsigned int* LengthCharText(char* text);
+
+		void CopyText(char* inputText, char* resultText);
+	};
+}
+
+namespace interface
+{
 	class IDataBase
 	{
 	 private:
-		Task* _tasks;
+		core::Task* _tasks;
 
 		unsigned int* _countTask;
 
@@ -44,5 +55,17 @@ namespace core
 		virtual void LoadTasks() = 0;
 
 		virtual void SaveTasks() = 0;
+	};
+}
+
+namespace controller
+{
+	class TaskController
+	{
+	private:
+		interface::IDataBase* _dataBase;
+
+	public:
+		void EditTask(core::Task* editableTask, unsigned int* newPriority, char* newText, bool* newIsDone);
 	};
 }
