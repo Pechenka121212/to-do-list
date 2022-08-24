@@ -13,15 +13,22 @@ set(
         modules/start/main.cpp
 )
 
-add_executable(TaskList ${CORE} ${START})
+set(
+    DATABASE
+        modules/database/db_notepad.h
+        modules/database/db_notepad.cpp
+)
+
+add_executable(TaskList ${CORE} ${START} ${DATABASE})
 
 target_include_directories(TaskList
     PRIVATE
     modules/core
+    modules/database
 )
 
 set_target_properties(
     TaskList PROPERTIES
-    CXX_STANDARD 11
+    CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
