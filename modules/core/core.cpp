@@ -1,6 +1,7 @@
 #include "core.h"
 #include<iostream>
 
+/// <inheritdoc />
 core::Task::Task(unsigned int* priority, char* text, bool* isDone)
 {
 	_priority = priority;
@@ -10,6 +11,7 @@ core::Task::Task(unsigned int* priority, char* text, bool* isDone)
 	_isDone = isDone;
 }
 
+/// <inheritdoc />
 core::Task::~Task()
 {
 	delete _priority;
@@ -19,16 +21,19 @@ core::Task::~Task()
 	delete _isDone;
 }
 
+/// <inheritdoc />
 unsigned int* core::Task::GetPriority()
 {
 	return _priority;
 }
 
+/// <inheritdoc />
 char* core::Task::GetText()
 {
 	return _text;
 }
 
+/// <inheritdoc />
 bool* core::Task::GetIsDone()
 {
 	return _isDone;
