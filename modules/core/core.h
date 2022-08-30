@@ -57,18 +57,56 @@ namespace core
 	class Helper
 	{
 	public:
+		/// <summary>
+		/// Get the text length
+		/// </summary>
+		/// <param name="text">Char text</param>
+		/// <returns>Text length not including symbol '\0'</returns>
 		unsigned int* GetLengthCharText(char* text);
 
+		/// <summary>
+		/// Copy the string value into another string
+		/// </summary>
+		/// <param name="inputText">Source string</param>
+		/// <param name="resultText">String into which you want to copy the value</param>
 		void CopyText(char* inputText, char* resultText);
 
+		/// <summary>
+		/// Cut text
+		/// </summary>
+		/// <param name="text">Source string</param>
+		/// <param name="startSubstringIndex">Cut start index</param>
+		/// <param name="finishSubstringIndex">Cut finish index</param>
+		/// <returns>Clipped line from the text</returns>
 		char* SubstringCharText(char* text, unsigned int* startSubstringIndex, unsigned int* finishSubstringIndex);
 
+		/// <summary>
+		/// Get the count of figures in a number
+		/// </summary>
+		/// <param name="number">Source number</param>
+		/// <returns>Count of figures in a number</returns>
 		unsigned int* GetCountNumber(unsigned int* number);
 
+		/// <summary>
+		/// Convert a number to a symbol
+		/// </summary>
+		/// <param name="oneNumber">Source number</param>
+		/// <returns>Converted number</returns>
 		char* CharByOneNumber(unsigned int* oneNumber);
 
+		/// <summary>
+		/// Convert a number to a character string
+		/// </summary>
+		/// <param name="number">Source number</param>
+		/// <returns>Converted number</returns>
 		char* ConvertIntToChar(unsigned int* number);
 
+
+		/// <summary>
+		/// Convert an object of the Task class into a string
+		/// </summary>
+		/// <param name="task">Source task</param>
+		/// <returns>Converted task</returns>
 		char* CreateCharTask(Task* task);
 	};
 }
