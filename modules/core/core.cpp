@@ -1,6 +1,5 @@
 #include "core.h"
 
-/// <inheritdoc />
 core::Task::Task(unsigned int* priority, char* text, bool* isDone)
 {
 	_priority = priority;
@@ -10,7 +9,6 @@ core::Task::Task(unsigned int* priority, char* text, bool* isDone)
 	_isDone = isDone;
 }
 
-/// <inheritdoc />
 core::Task::~Task()
 {
 	delete _priority;
@@ -20,25 +18,21 @@ core::Task::~Task()
 	delete _isDone;
 }
 
-/// <inheritdoc />
 unsigned int* core::Task::GetPriority()
 {
 	return _priority;
 }
 
-/// <inheritdoc />
 char* core::Task::GetText()
 {
 	return _text;
 }
 
-/// <inheritdoc />
 bool* core::Task::GetIsDone()
 {
 	return _isDone;
 }
 
-/// <inheritdoc />
 unsigned int* core::Helper::GetLengthCharText(char* text)
 {
 	unsigned int* lengthText = new unsigned int;
@@ -53,7 +47,6 @@ unsigned int* core::Helper::GetLengthCharText(char* text)
 	return lengthText;
 }
 
-/// <inheritdoc />
 void core::Helper::CopyText(char* inputText, char* resultText)
 {
 	unsigned int* lengthText = GetLengthCharText(inputText);
@@ -66,7 +59,6 @@ void core::Helper::CopyText(char* inputText, char* resultText)
 	delete lengthText;
 }
 
-/// <inheritdoc />
 char* core::Helper::SubstringCharText(char* text, unsigned int* startSubstringIndex, unsigned int* finishSubstringIndex)
 {
 	unsigned int* lengthText = new unsigned int;
@@ -87,7 +79,6 @@ char* core::Helper::SubstringCharText(char* text, unsigned int* startSubstringIn
 	return substringText;
 }
 
-/// <inheritdoc />
 unsigned int* core::Helper::GetCountNumber(unsigned int* number)
 {
 	unsigned int* countNumber = new unsigned int;
@@ -104,7 +95,6 @@ unsigned int* core::Helper::GetCountNumber(unsigned int* number)
 	return countNumber;
 }
 
-/// <inheritdoc />
 char* core::Helper::CharByOneNumber(unsigned int* oneNumber)
 {
 	char* charNumber = new char;
@@ -146,7 +136,6 @@ char* core::Helper::CharByOneNumber(unsigned int* oneNumber)
 	return charNumber;
 }
 
-/// <inheritdoc />
 char* core::Helper::ConvertIntToChar(unsigned int* number)
 {
 	unsigned int* lengthCharNumber = GetCountNumber(number);
@@ -186,7 +175,6 @@ char* core::Helper::ConvertIntToChar(unsigned int* number)
 	return charNumber;
 }
 
-/// <inheritdoc />
 char* core::Helper::CreateCharTask(Task* task)
 {
 	unsigned int* lengthText = new unsigned int;

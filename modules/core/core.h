@@ -116,40 +116,99 @@ namespace interface
 	class IDataBase
 	{
 	 private:
+		/// <summary>
+		/// Task list
+		/// </summary>
 		core::Task** _tasks;
 
+		/// <summary>
+		/// Count of tasks in the list
+		/// </summary>
 		unsigned int* _countTask;
 
+		/// <summary>
+		/// Path to the task file
+		/// </summary>
 		//char* _pathToFile;
 
+		/// <summary>
+		/// Database status
+		/// </summary>
 		bool* _isCreated;
 
+		/// <summary>
+		/// Get count of tasks in the database
+		/// </summary>
 		virtual void LoadCountTask() = 0;
 
+		/// <summary>
+		/// Get database status
+		/// </summary>
+		/// <returns>Database status</returns>
 		virtual bool* CheckCreated() = 0;
 
+		/// <summary>
+		/// Create a database file
+		/// </summary>
 		virtual void CreateDataBase() = 0;
 
+		/// <summary>
+		/// Get the task list from database
+		/// </summary>
 		virtual void LoadTasks() = 0;
 
 	public:
-
+		/// <summary>
+		/// Update the database file
+		/// </summary>
 		virtual void UpdateDataBase() = 0;
 
+		/// <summary>
+		/// Get the task list
+		/// </summary>
+		/// <returns>Task list</returns>
 		core::Task** GetTasks();
 
+		/// <summary>
+		/// Set the task list
+		/// </summary>
+		/// <param name="tasks">Task list</param>
 		void SetTasks(core::Task** tasks);
 
+		/// <summary>
+		/// Get the count of tasks
+		/// </summary>
+		/// <returns>Count of tasks in the list</returns>
 		unsigned int* GetCountTask();
 
+		/// <summary>
+		/// Set the count of tasks
+		/// </summary>
+		/// <param name="countTask">Count of tasks in the list</param>
 		void SetCountTask(unsigned int* countTask);
 
+		/// <summary>
+		/// Get the path to the task file
+		/// </summary>
+		/// <returns>Path to the task file</returns>
 		char* GetPathToFile();
 
+		/// <summary>
+		/// Set the path to the task file
+		/// </summary>
+		/// <param name="pathToFile">Path to the task file</param>
 		void SetPathToFile(char* pathToFile);
 
+		/// <summary>
+		/// Get the database status
+		/// </summary>
+		/// <returns>Database status</returns>
 		bool* GetIsCreated();
 
+		/// <summary>
+		/// Set the database status
+		/// </summary>
+		/// <param name="isCreated">Database status</param>
 		void SetIsCreated(bool* isCreated);
 	};
 }
