@@ -241,9 +241,15 @@ namespace interface
 	class IUserInterface
 	{
 	private:
+		/// <summary>
+		/// Task controller instance
+		/// </summary>
 		controller::TaskController* _taskController;
 
 	public:
+		/// <summary>
+		/// Print a task
+		/// </summary>
 		virtual void PrintTask() = 0;
 	};
 }
