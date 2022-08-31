@@ -219,9 +219,19 @@ namespace controller
 	class TaskController
 	{
 	private:
+		/// <summary>
+		/// Database instance
+		/// </summary>
 		interface::IDataBase* _dataBase;
 
 	public:
+		/// <summary>
+		/// Edit a task from the task list
+		/// </summary>
+		/// <param name="editableTask">Source task</param>
+		/// <param name="newPriority">New task priority</param>
+		/// <param name="newText">New task text</param>
+		/// <param name="newIsDone">New task status</param>
 		void EditTask(core::Task* editableTask, unsigned int* newPriority, char* newText, bool* newIsDone);
 	};
 }
